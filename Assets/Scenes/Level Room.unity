@@ -569,25 +569,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1420076965, guid: 58487d0cd5945c342a333a6a719947ca, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.5
+    - target: {fileID: 397141970, guid: 58487d0cd5945c342a333a6a719947ca, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1420076965, guid: 58487d0cd5945c342a333a6a719947ca, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.5
+    - target: {fileID: 1460012498, guid: 58487d0cd5945c342a333a6a719947ca, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1420076965, guid: 58487d0cd5945c342a333a6a719947ca, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.5
+    - target: {fileID: 1572421913, guid: 58487d0cd5945c342a333a6a719947ca, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1420076965, guid: 58487d0cd5945c342a333a6a719947ca, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.5
+    - target: {fileID: 1837611902, guid: 58487d0cd5945c342a333a6a719947ca, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1420076965, guid: 58487d0cd5945c342a333a6a719947ca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
+    - target: {fileID: 834029770739252370, guid: 58487d0cd5945c342a333a6a719947ca,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2699375607492617012, guid: 58487d0cd5945c342a333a6a719947ca,
         type: 3}
@@ -648,41 +649,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Room new
-      objectReference: {fileID: 0}
-    - target: {fileID: 8359394903417568000, guid: 58487d0cd5945c342a333a6a719947ca,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.07893608
-      objectReference: {fileID: 0}
-    - target: {fileID: 8359394903417568000, guid: 58487d0cd5945c342a333a6a719947ca,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.07893608
-      objectReference: {fileID: 0}
-    - target: {fileID: 8359394903417568000, guid: 58487d0cd5945c342a333a6a719947ca,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7026871
-      objectReference: {fileID: 0}
-    - target: {fileID: 8359394903417568000, guid: 58487d0cd5945c342a333a6a719947ca,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7026871
-      objectReference: {fileID: 0}
-    - target: {fileID: 8359394903417568000, guid: 58487d0cd5945c342a333a6a719947ca,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -12.819
-      objectReference: {fileID: 0}
-    - target: {fileID: 8359394903417568000, guid: 58487d0cd5945c342a333a6a719947ca,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8359394903417568000, guid: 58487d0cd5945c342a333a6a719947ca,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58487d0cd5945c342a333a6a719947ca, type: 3}
@@ -805,7 +771,7 @@ MonoBehaviour:
   m_AudioClipForOnHoverEntered: {fileID: 0}
   m_PlayAudioClipOnHoverExited: 0
   m_AudioClipForOnHoverExited: {fileID: 0}
-  m_PlayHapticsOnSelectEntered: 0
+  m_PlayHapticsOnSelectEntered: 1
   m_HapticSelectEnterIntensity: 0.3
   m_HapticSelectEnterDuration: 0.1
   m_PlayHapticsOnSelectExited: 0
@@ -936,7 +902,7 @@ MonoBehaviour:
   m_AudioClipForOnHoverEntered: {fileID: 0}
   m_PlayAudioClipOnHoverExited: 0
   m_AudioClipForOnHoverExited: {fileID: 0}
-  m_PlayHapticsOnSelectEntered: 0
+  m_PlayHapticsOnSelectEntered: 1
   m_HapticSelectEnterIntensity: 0.3
   m_HapticSelectEnterDuration: 0.1
   m_PlayHapticsOnSelectExited: 0
