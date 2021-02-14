@@ -6,10 +6,14 @@
     <e p="D:\Faryal\Unity Project\VR FYP" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="checkCollide.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Core" t="Include">
             <e p="HandCheck.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
+          </e>
+          <e p="Door" t="Include">
+            <e p="FollowHandle.cs" t="Include" />
           </e>
         </e>
       </e>
