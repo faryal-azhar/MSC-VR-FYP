@@ -12,8 +12,8 @@
             <e p="HandCheck.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
           </e>
-          <e p="Door" t="Include">
-            <e p="FollowHandle.cs" t="Include" />
+          <e p="Furniture" t="Include">
+            <e p="Drawer.cs" t="Include" />
           </e>
         </e>
       </e>
