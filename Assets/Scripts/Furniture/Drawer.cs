@@ -2,10 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drawer:MonoBehaviour
+public class Drawer : MonoBehaviour
 {
-    public int selectedCord;
-    public ConditionType conditionType;
+    enum ConditionType
+    {
+        Greater,
+        Lesser
+    }
+
+    enum Coordinates
+    {
+        x, y, z
+    };
+    [SerializeField] Coordinates selectedCord;
+    [SerializeField] ConditionType conditionType;
     [SerializeField] Vector3 customLinearLimits;
     // Start is called before the first frame update
     void Start()
@@ -19,7 +29,7 @@ public class Drawer:MonoBehaviour
         switch (conditionType)
         {
             case ConditionType.Greater :
-                if (selectedCord ==0)
+                if (selectedCord ==Coordinates.x)
                 {
                     if (transform.localPosition.x>=customLinearLimits.x)
                     {
@@ -28,7 +38,7 @@ public class Drawer:MonoBehaviour
                         transform.localPosition = newPos;
                     }
                 }
-                else if (selectedCord ==1)
+                else if (selectedCord ==Coordinates.y)
                 {
                     if (transform.localPosition.y>=customLinearLimits.y)
                     {
@@ -37,7 +47,7 @@ public class Drawer:MonoBehaviour
                         transform.localPosition = newPos;
                     }
                 }
-                else if (selectedCord ==2)
+                else if (selectedCord ==Coordinates.z)
                 {
                     if (transform.localPosition.z>=customLinearLimits.z)
                     {
@@ -48,7 +58,7 @@ public class Drawer:MonoBehaviour
                 }
                 break;
             case ConditionType.Lesser:
-                if (selectedCord ==0)
+                if (selectedCord ==Coordinates.x)
                 {
                     if (transform.localPosition.x<=customLinearLimits.x)
                     {
@@ -57,7 +67,7 @@ public class Drawer:MonoBehaviour
                         transform.localPosition = newPos;
                     }
                 }
-                else if (selectedCord ==1)
+                else if (selectedCord ==Coordinates.y)
                 {
                     if (transform.localPosition.y<=customLinearLimits.y)
                     {
@@ -66,7 +76,7 @@ public class Drawer:MonoBehaviour
                         transform.localPosition = newPos;
                     }
                 }
-                else if (selectedCord ==2)
+                else if (selectedCord ==Coordinates.z)
                 {
                     if (transform.localPosition.z<=customLinearLimits.z)
                     {
@@ -80,10 +90,7 @@ public class Drawer:MonoBehaviour
         
         
     }
+
 }
 
-public enum ConditionType
-{
-    Greater,
-    Lesser
-}
+
