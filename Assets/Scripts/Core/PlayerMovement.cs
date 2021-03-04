@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //ControllerFollowHeadset();    //To make capsule follow headset
+        ControllerFollowHeadset();    //To make capsule follow headset
         Quaternion headRotation = Quaternion.Euler(0f,playerRig.cameraGameObject.transform.eulerAngles.y,0f);
         //Set direction of player according to the rotation of vr headset
         Vector3 direction =headRotation * new Vector3(inputAxis.x, 0f, inputAxis.y);
