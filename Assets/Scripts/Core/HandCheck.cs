@@ -6,11 +6,11 @@ using UnityEngine.XR;
 public class HandCheck : MonoBehaviour
 {
     private InputDevice _targetDevice;
-    [SerializeField] InputDeviceCharacteristics _inputDeviceCharacteristics;
-    [SerializeField] private List<GameObject> _controllerPrefabs;
+    public InputDeviceCharacteristics _inputDeviceCharacteristics;
+    public List<GameObject> _controllerPrefabs;
     private GameObject _selectedController;
     private GameObject _spawnedControllerPrefab;
-    [SerializeField] private GameObject _handPrefab;
+    public GameObject _handPrefab;
     private GameObject _spawnedHandPrefab;
     [SerializeField] private bool _showHand=true;
     private Animator _handAnimator;

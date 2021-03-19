@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private XRNode inputNode;
+    public XRNode inputNode;
     private Vector2 inputAxis;
     private CharacterController playerController;
     [SerializeField] private float playerSpeed = 1f;
@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private float gravity = -9.81f;
     private float fallingSpeed;
     private float additionalHeight = 0.2f;
-    [SerializeField] private LayerMask floorLayer;
+    public LayerMask floorLayer;
     
     // Start is called before the first frame update
     void Start()

@@ -12,16 +12,9 @@ public class Blocks : MonoBehaviour
     }
 
     public BlockColor color;
-    // Start is called before the first frame update
-    void Start()
+    
+    public void DestroyBlock()
     {
-        
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Destroy(this.gameObject);
     }
 }

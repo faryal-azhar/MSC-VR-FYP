@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,10 +13,13 @@ public class Bucket : MonoBehaviour
 
     [SerializeField] BucketColor bucketColor=0;
     [SerializeField] int maxBlocks=3;
+    public List<Blocks> collidingBlocks;
+    public ParticleSystem VFX;
 
     bool bucketFull = false;
 
-   public int blocksContain = 0; //remove public later
+    static int completedBucket = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +31,7 @@ public class Bucket : MonoBehaviour
     {
         if (other.GetComponent<Blocks>().color.ToString()==bucketColor.ToString()) // to see if the color of block is same as bucket
         {
-            blocksContain++;
+            collidingBlocks.Add(other.GetComponent<Blocks>());
             CheckBucketFull();
         }
     }
@@ -36,24 +40,53 @@ public class Bucket : MonoBehaviour
     {
         if (other.GetComponent<Blocks>().color.ToString() == bucketColor.ToString()) 
         {
-            blocksContain--;
+            collidingBlocks.Remove(other.GetComponent<Blocks>());
             CheckBucketFull();
         }
     }
 
     private void CheckBucketFull()
     {
-        if (blocksContain == maxBlocks)
+        if (collidingBlocks.Count == maxBlocks)
         {
             bucketFull = true;
-            Debug.Log(name + "bucket is full");
+            completedBucket++;
+            if (completedBucket == 3)
+            {
+                transform.parent.GetComponent<Buckets>().DestroyBuckets();
+            }
         }
         else
         {
-            bucketFull = false;
+            if (bucketFull == true)
+            {
+                completedBucket--;
+                bucketFull = false;
+            }    
         }
     }
 
+    public void DestroyBucket()
+    {
+        PlayVfx();
+        DestroyBlocks();
+        Destroy(this.gameObject);
+    }
+
+    private void PlayVfx()
+    {
+        var vfx = Instantiate(VFX, transform.position, Quaternion.identity); ;
+        vfx.Play();
+        Destroy(vfx.gameObject, vfx.main.duration);
+    }
+
+    private void DestroyBlocks()
+    {
+        foreach(Blocks block in collidingBlocks)
+        {
+            block.DestroyBlock();
+        }
+    }
 
 
     // Update is called once per frame

@@ -9616,7 +9616,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bucketColor: 1
   maxBlocks: 3
-  blocksContain: 0
+  collidingBlocks: []
+  VFX: {fileID: 5775792050484356042, guid: 22c63dce60609494f81ef2ae21b62d60, type: 3}
 --- !u!64 &921934243
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17673,6 +17674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1650330231}
+  - component: {fileID: 1650330232}
   m_Layer: 0
   m_Name: Basket
   m_TagString: Untagged
@@ -17697,6 +17699,22 @@ Transform:
   m_Father: {fileID: 633028282}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1650330232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650330230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421dd1c23644d104997bd6cada42d65b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buckets:
+  - {fileID: 6282662758736366178}
+  - {fileID: 921934242}
+  - {fileID: 1873448914}
 --- !u!1001 &1652251353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21269,7 +21287,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bucketColor: 2
   maxBlocks: 3
-  blocksContain: 0
+  collidingBlocks: []
+  VFX: {fileID: 1134403961478250482, guid: eb644c9a850d60d42bdb37c1380b2b04, type: 3}
 --- !u!64 &1873448915
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47591,7 +47610,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bucketColor: 0
   maxBlocks: 3
-  blocksContain: 0
+  collidingBlocks: []
+  VFX: {fileID: 4422144355941080568, guid: 89fddded523839c419280128bf5b16b3, type: 3}
 --- !u!64 &6282662758736366179
 MeshCollider:
   m_ObjectHideFlags: 0
