@@ -27,7 +27,8 @@ public class Switch_ParticleLoop_OnOff : MonoBehaviour {
 			
 			foreach(ParticleSystem ps in systems)
 			{
-				ps.loop = setLoop;
+				ParticleSystem.MainModule main = ps.main;
+				main.loop = setLoop;
 			}
 		}
 	}

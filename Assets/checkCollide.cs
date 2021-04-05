@@ -13,7 +13,7 @@ public class checkCollide : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Colliding with "+other.collider.name);
+        Debug.Log(name+"Colliding with "+other.collider.name);
     }
 
     // Update is called once per frame

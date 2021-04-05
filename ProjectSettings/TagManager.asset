@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ball
+  - floor
+  - buttonDown
   layers:
   - Default
   - TransparentFX
@@ -20,11 +23,11 @@ TagManager:
   - Walls
   - drawer
   - hands
-  - 
-  - 
-  - 
-  - 
-  - 
+  - terrain
+  - drawer-bottom
+  - hand-button
+  - buttons
+  - noEntry
   - 
   - 
   - 
