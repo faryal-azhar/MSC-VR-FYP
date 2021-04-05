@@ -5,6 +5,7 @@ using UnityEngine;
 public class Buckets : MonoBehaviour
 {
     public Bucket[] buckets;
+    public AudioSource winningAudio;
 
     public void DestroyBuckets()
     {
@@ -12,6 +13,7 @@ public class Buckets : MonoBehaviour
         {
             bucket.DestroyBucket();
         }
+        winningAudio.Play();
     }
 
     // Start is called before the first frame update

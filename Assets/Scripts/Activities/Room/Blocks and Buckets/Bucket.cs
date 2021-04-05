@@ -3,33 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(B_Color))]
 public class Bucket : MonoBehaviour
 {
-    enum BucketColor {
-        Red,
-        Green,
-        Blue
-    }
-
-    [SerializeField] BucketColor bucketColor=0;
     [SerializeField] int maxBlocks=3;
     public List<Blocks> collidingBlocks;
     public ParticleSystem VFX;
-
     bool bucketFull = false;
 
     static int completedBucket = 0;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Blocks>().color.ToString()==bucketColor.ToString()) // to see if the color of block is same as bucket
+        if (other.GetComponent<B_Color>().color == GetComponent<B_Color>().color) // to see if the color of block is same as bucket
         {
             collidingBlocks.Add(other.GetComponent<Blocks>());
             CheckBucketFull();
@@ -38,7 +24,7 @@ public class Bucket : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<Blocks>().color.ToString() == bucketColor.ToString()) 
+        if (other.GetComponent<B_Color>().color == GetComponent<B_Color>().color) // to see if the color of block is same as bucket
         {
             collidingBlocks.Remove(other.GetComponent<Blocks>());
             CheckBucketFull();
@@ -80,18 +66,13 @@ public class Bucket : MonoBehaviour
         Destroy(vfx.gameObject, vfx.main.duration);
     }
 
+    
     private void DestroyBlocks()
     {
         foreach(Blocks block in collidingBlocks)
         {
-            block.DestroyBlock();
+           Destroy(block.gameObject); //Check
         }
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
