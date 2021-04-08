@@ -15,13 +15,27 @@ namespace BasketBallActivity
         int index1, index2, index3; //store indexes in random order
         int incorrectResult1, incorrectResult2, correctResult;
         public TextMeshProUGUI questionText;
+        BasketBallScores basketBallScores;
 
         public void StartActivity()
         {
+            basketBallScores = GetComponent<BasketBallScores>();
             GenerateQuestion();
             GenerateRandomResult();
             GenerateRandomIndex();
-            AssignValuesToGoalBasket();
+            AssignValuesToGoalBasket(true);
+        }
+
+        public void QuitActivity()
+        {
+            number1 = number2 =
+            incorrectResult1 = incorrectResult2 = correctResult = 0;
+            questionText.text = "? + ? = ?";
+            AssignValuesToGoalBasket(false);
+            index1 = index2 = index3 = 0;
+            basketBallScores.SetHighScore();
+            basketBallScores.ResetScores();
+
         }
 
         private void GenerateQuestion()
@@ -85,13 +99,13 @@ namespace BasketBallActivity
         }
 
 
-        private void AssignValuesToGoalBasket()
+        private void AssignValuesToGoalBasket(bool val)
         {
             targetBaskets[index1].SetValue(incorrectResult1);
             targetBaskets[index2].SetValue(incorrectResult2);
             targetBaskets[index3].SetValue(correctResult);
 
-            targetBaskets[index3].SetCorrectBasket(true);
+            targetBaskets[index3].SetCorrectBasket(val);
 
         }
 

@@ -29,17 +29,12 @@ namespace BasketBallActivity
             scoreText.text = totalScore.ToString();
         }
 
-        
 
         public void DecreaseChances()
         {
             if (chances == 0)
             {
-                if (highScore < totalScore)
-                {
-                   // Debug.Log("Check high Score " + highScore);
-                    SetHighScore();
-                }
+                SetHighScore();
                 totalScore = 0;
                 Debug.Log("You lost");  //Restart the activity-- restart score
             }
@@ -50,10 +45,20 @@ namespace BasketBallActivity
             }
         }
 
-        private void SetHighScore()
+        public void ResetScores()
         {
-            highScore = totalScore;
-            highScoreText.text = highScore.ToString();
+            scoreText.text = "X";
+            chancesText.text = "5";
+            
+        }
+
+        public void SetHighScore()
+        {
+            if (highScore < totalScore)
+            {
+                highScore = totalScore;
+                highScoreText.text = highScore.ToString();
+            }   
         }
  
        

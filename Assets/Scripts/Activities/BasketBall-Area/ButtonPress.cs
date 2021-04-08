@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,12 +7,14 @@ namespace BasketBallActivity
 {
     public class ButtonPress : MonoBehaviour
     {
+        //bool isOn = false;
         Vector3 actualPosition;
         float yMaxPosition = 0.5f;
         Vector3 clampedPosition;
         public BasketBallManager manager;
         public BallStand ballStand;
         bool started = false;
+        [SerializeField] BallAttractor[] ballAttractors;
         // Start is called before the first frame update
         void Start()
         {
@@ -22,20 +25,37 @@ namespace BasketBallActivity
 
         private void OnCollisionEnter(Collision collision)
         {
+            Debug.Log("triggered");
             if (!started)
             {
                 started = true;
                 StartTheActivity();
             }
 
+            else if (started)
+            {
+                started = false;
+                QuitActivity();
+            }
+
             GetComponent<Renderer>().material.color = Color.green;
              
         }
 
+        private void QuitActivity()
+        {
+            ballStand.DestroyBalls();
+            manager.QuitActivity();
+        }
+
         private void StartTheActivity()
         {
-            ballStand.InstantiateBall();
+            ballStand.InstantiateBall(false);
             manager.StartActivity();
+            foreach(BallAttractor ballAtractor in ballAttractors)
+            {
+                ballAtractor.gameObject.SetActive(true);
+            }
         }
 
         private void OnCollisionExit(Collision collision)

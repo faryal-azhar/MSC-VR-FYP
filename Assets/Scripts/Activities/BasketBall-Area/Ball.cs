@@ -34,18 +34,26 @@ namespace BasketBallActivity
                 else
                 {
                     if(!hasBallGenerated)
-                        GenerateNewBall();
+                        CheckForBall();
                 }
             }
         }
 
-        private void GenerateNewBall()
+        private void CheckForBall()
         {
             hasBallGenerated = true;
             //Debug.Log("Collided with ground");
-            ballStand.InstantiateBall();
             Destroy(this.GetComponent<XRGrabInteractable>());
-            Destroy(gameObject,1f);
+            Debug.Log("Check1");
+            ballStand.InstantiateBall(true);
+            DestroyBall(1f);
+
+        }
+
+
+        public void DestroyBall(float time)
+        {
+            Destroy(gameObject, time);
         }
 
         private void BallHitGround()
