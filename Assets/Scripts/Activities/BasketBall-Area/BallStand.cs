@@ -9,17 +9,16 @@ namespace BasketBallActivity
         public Ball ballPrefab;
         public Transform transformPoint;
         Ball ballInstance;
-        bool force = false; // will be only true when call from BALL.. using becaude had to destroy ball
-        public void InstantiateBall(bool val)
+        //bool force = false; // will be only true when call from BALL.. using becaude had to destroy ball
+        public void InstantiateBall(bool force)
         {
-            force = val;
+            
             if (!ballInstance || force)
             {
                 ballInstance = Instantiate(ballPrefab, transformPoint.position, Quaternion.identity);
                 ballInstance.transform.parent = transformPoint;
 
                 ballInstance.SetBallStand(this);
-                force = false;
 
             }
             

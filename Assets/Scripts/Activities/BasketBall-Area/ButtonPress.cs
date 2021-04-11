@@ -26,20 +26,23 @@ namespace BasketBallActivity
         private void OnCollisionEnter(Collision collision)
         {
             Debug.Log("triggered");
-            if (!started)
+            if(collision.collider.tag== "buttonDown")
             {
-                started = true;
-                StartTheActivity();
-            }
+                if (!started)
+                {
+                    started = true;
+                    StartTheActivity();
+                    GetComponent<Renderer>().material.color = Color.green;
+                }
 
-            else if (started)
-            {
-                started = false;
-                QuitActivity();
+                else if (started)
+                {
+                    started = false;
+                    QuitActivity();
+                    GetComponent<Renderer>().material.color = Color.red;
+                }
             }
-
-            GetComponent<Renderer>().material.color = Color.green;
-             
+            
         }
 
         private void QuitActivity()
@@ -60,8 +63,8 @@ namespace BasketBallActivity
 
         private void OnCollisionExit(Collision collision)
         {
-            transform.localPosition = Vector3.Slerp(transform.localPosition, actualPosition, 0.3f);
-            GetComponent<Renderer>().material.color = Color.red;
+            transform.localPosition = Vector3.Lerp(transform.localPosition, actualPosition, 0.3f);
+            //GetComponent<Renderer>().material.color = Color.red;
 
            // Debug.Log("Exiting " + transform.position);
         }

@@ -16,14 +16,22 @@ namespace BasketBallActivity
         int incorrectResult1, incorrectResult2, correctResult;
         public TextMeshProUGUI questionText;
         BasketBallScores basketBallScores;
+        int minNumber=1, maxNumber=11;
 
         public void StartActivity()
         {
             basketBallScores = GetComponent<BasketBallScores>();
+            //if(minNumber==0 || maxNumber==0) SetMinMaxRange(1, 11);
             GenerateQuestion();
             GenerateRandomResult();
             GenerateRandomIndex();
             AssignValuesToGoalBasket(true);
+        }
+
+        public void SetMinMaxRange(int min,int max)
+        {
+            minNumber = min;
+            maxNumber = max;
         }
 
         public void QuitActivity()
@@ -40,8 +48,8 @@ namespace BasketBallActivity
 
         private void GenerateQuestion()
         {
-            number1 = Random.Range(1, 11);
-            number2 = Random.Range(1, 11);
+            number1 = Random.Range(minNumber, maxNumber);
+            number2 = Random.Range(minNumber, maxNumber);
             switch (activityType)
             {
                 case ActivityType.addition:

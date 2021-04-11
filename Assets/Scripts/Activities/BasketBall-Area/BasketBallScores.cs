@@ -8,7 +8,7 @@ namespace BasketBallActivity
 {
     public class BasketBallScores : MonoBehaviour
     {
-        public int scorePerGaol = 5;
+        public int scorePerGoal = 5;
         public int totalScore = 0;
         public int chances = 5;
         public int highScore = 0;
@@ -22,10 +22,15 @@ namespace BasketBallActivity
             chancesText.text = chances.ToString();
         }
 
+        public void SetScoresPerGoal(int score)
+        {
+            scorePerGoal = score;
+        }
+
 
         public void IncreaseScore()
         {
-            totalScore += scorePerGaol;
+            totalScore += scorePerGoal;
             scoreText.text = totalScore.ToString();
         }
 
