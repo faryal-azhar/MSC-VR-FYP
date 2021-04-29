@@ -2,13 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace BasketBallActivity
 {
+    [RequireComponent(typeof(AudioSource))]
     public class BasketStand : MonoBehaviour
     {
         public GoalBasket goalBasket;
         [SerializeField] ParticleSystem hitVfx;
         [SerializeField] Transform hitVfxPoint;
+        AudioSource audioSource;
+
+        private void Start()
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -37,7 +45,7 @@ namespace BasketBallActivity
 
         private void PlaySfx()
         {
-            GetComponent<AudioSource>().Play();
+            audioSource.Play();
         }
     }
 }

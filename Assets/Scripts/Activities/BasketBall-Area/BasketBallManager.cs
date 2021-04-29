@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace BasketBallActivity
 {
+    [RequireComponent(typeof(BasketBallScores))]
     public class BasketBallManager : MonoBehaviour
     {
 
@@ -41,7 +42,6 @@ namespace BasketBallActivity
             questionText.text = "? + ? = ?";
             AssignValuesToGoalBasket(false);
             index1 = index2 = index3 = 0;
-            basketBallScores.SetHighScore();
             basketBallScores.ResetScores();
 
         }

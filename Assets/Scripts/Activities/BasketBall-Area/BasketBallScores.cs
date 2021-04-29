@@ -38,9 +38,8 @@ namespace BasketBallActivity
         public void DecreaseChances()
         {
             if (chances == 0)
-            {
-                SetHighScore();
-                totalScore = 0;
+            {   
+                ResetScores();
                 Debug.Log("You lost");  //Restart the activity-- restart score
             }
             else
@@ -52,9 +51,16 @@ namespace BasketBallActivity
 
         public void ResetScores()
         {
-            scoreText.text = "X";
-            chancesText.text = "5";
-            
+            SetHighScore();
+            totalScore = 0;
+            chances = 5;
+            UpdateTexts();
+        }
+
+        void UpdateTexts()
+        {
+            scoreText.text = totalScore.ToString();
+            chancesText.text = chances.ToString();
         }
 
         public void SetHighScore()
