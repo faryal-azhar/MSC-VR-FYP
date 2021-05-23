@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace SpellingActivity
 {
@@ -10,6 +11,7 @@ namespace SpellingActivity
         public Modes obj;
         private Modes[] modes;
 
+
         private void Start()
         {
             //modes =obj.GetComponents<Modes>();
@@ -17,37 +19,32 @@ namespace SpellingActivity
 
         public void PressEasy()
         {
-            ActivateTheMode(obj.GetComponent<EasyMode>());
+            DeactivateAllModes(obj.GetComponent<EasyMode>());
         }
 
         public void PressMedium()
         {
-            ActivateTheMode(obj.GetComponent<MediumMode>());
+            DeactivateAllModes(obj.GetComponent<MediumMode>());
         }
 
         public void PressHard()
         {
-            ActivateTheMode(obj.GetComponent<HardMode>());
+            DeactivateAllModes(obj.GetComponent<HardMode>());
         }
 
         public void PressCuston()
         {
-            ActivateTheMode(obj.GetComponent<CustomMode>());
+            DeactivateAllModes(obj.GetComponent<CustomMode>());
         }
 
-        private void ActivateTheMode(Modes mode)
+        private void DeactivateAllModes(Modes mode)
         {
             foreach(Modes m in modes)
             {
-                if (m == mode)
-                {
-                    m.enabled = true;
-                }
-                else
-                {
-                    m.enabled = false;
-                }
+                m.enabled = false;
             }
+            mode.enabled = true;
+            //modes.First(m => m == mode).enabled=true;     //will check
         }
 
 

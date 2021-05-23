@@ -11,6 +11,8 @@ public class LocomotionController : MonoBehaviour
 
     public XRRayInteractor rightInteractor;
 
+    public bool EnableTeleport { get; set; } = true;
+
     // Update is called once per frame
     [System.Obsolete]
     void Update()
@@ -20,7 +22,7 @@ public class LocomotionController : MonoBehaviour
         int index = 0;
         bool validTarget = false;
 
-        if (teleportRay)
+        if (EnableTeleport && teleportRay)
         {
             bool isInteractableRayHovering = rightInteractor.TryGetHitInfo(ref pos, ref norm, ref index, ref validTarget);
             teleportRay.gameObject.SetActive(isRayActive(teleportRay) && !isInteractableRayHovering);

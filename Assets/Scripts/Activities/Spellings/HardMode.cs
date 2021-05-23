@@ -11,15 +11,6 @@ namespace SpellingActivity
 
         public override string dictionaryFileName => "condenseDictionary.txt";
 
-        private void Start()
-        {
-            Debug.Log("Hard Mode");
-            GenerateTheWord();
-        }
 
-        public override void GenerateTheWord()
-        {
-            base.GenerateTheWord();
-        }
     }
 }

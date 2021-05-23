@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,11 +9,11 @@ namespace SpellingActivity
 {
     public class Balloon : MonoBehaviour
     {
-        [SerializeField] Text characterText;
+        [SerializeField] TextMeshProUGUI characterText;
         [SerializeField] char containedCharacter;
         private Color[] colors = { Color.cyan, Color.red, Color.yellow, Color.magenta, Color.blue, Color.green };
-        public static event Action<char> OnHitBalloon;
-        
+        [SerializeField] ParticleSystem popVfx;
+        public BalloonGenerator balloonGenerator;
         
 
         private void Start()
@@ -26,12 +27,15 @@ namespace SpellingActivity
             characterText.text = character.ToString();
         }
 
-        private void OnTriggerEnter(Collider other)
+
+        private void OnParticleCollision(GameObject other)
         {
             //GetComponent<SphereCollider>().enabled = false;
-            if (OnHitBalloon != null)
-                OnHitBalloon(containedCharacter);
-            Destroy(gameObject);
+                 if (other.name != "laser") return;
+                balloonGenerator.OnHitBalloon(containedCharacter);
+                Instantiate(popVfx, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            
         }
 
 
