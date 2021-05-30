@@ -44,7 +44,6 @@ namespace BasketBallActivity
                 forceDirction = (point.position - ball.transform.position);
                 var targetRotation = Quaternion.LookRotation(point.position - transform.position, Vector3.up);
                 
-                Debug.Log(point.transform.position - ball.transform.position);
                 // ball.transform.rotation = Quaternion.Slerp(ball.transform.rotation, targetRotation, slerpForce * Time.deltaTime);
                 ball.transform.LookAt(point);
                 ball.transform.position=(Vector3.Slerp(ball.transform.position, point.position, slerpForce * Time.deltaTime));

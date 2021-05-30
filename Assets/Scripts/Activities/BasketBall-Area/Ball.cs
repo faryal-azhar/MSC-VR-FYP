@@ -44,7 +44,6 @@ namespace BasketBallActivity
             hasBallGenerated = true;
             //Debug.Log("Collided with ground");
             Destroy(this.GetComponent<XRGrabInteractable>());
-            Debug.Log("Check1");
             ballStand.InstantiateBall(true);
             DestroyBall(1f);
 

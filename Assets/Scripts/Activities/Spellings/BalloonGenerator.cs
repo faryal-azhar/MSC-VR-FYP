@@ -20,31 +20,40 @@ namespace SpellingActivity
 
         private void Awake()
         {
-            Modes.GenerateBalloon += Modes_GenerateBalloon;
-            Modes.DestroyBalloon += DestroyActiveBallonns;
+            
             audioSource = GetComponent<AudioSource>();
+        }
+
+        private void OnEnable()
+        {
+            SpellingManager.GenerateBalloon += Modes_GenerateBalloon;
+            SpellingManager.DestroyBalloon += DestroyActiveBallonns;
         }
 
         private void OnDisable()
         {
-            Modes.GenerateBalloon -= Modes_GenerateBalloon;
-            Modes.DestroyBalloon -= DestroyActiveBallonns;
+            SpellingManager.GenerateBalloon -= Modes_GenerateBalloon;
+            SpellingManager.DestroyBalloon -= DestroyActiveBallonns;
+            DestroyActiveBallonns();
         }
 
 
         public void DestroyActiveBallonns()
         {
+            guessedWord = "";
             if (activeBalloons == null) return;
             foreach(Balloon b in activeBalloons)
             {
                 Destroy(b.gameObject);
             }
             activeBalloons.Clear();
+            uiManager.UpdateUnScrabledWord("");
         }
 
-        public void OnHitBalloon(char obj)
+        public void OnHitBalloon(char obj,Balloon b)
         {
             audioSource.Play();
+            activeBalloons.Remove(b);
             guessedWord += obj;
             uiManager.UpdateUnScrabledWord(guessedWord);
             if (guessedWord.Length == scrambledWord.Length)

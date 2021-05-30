@@ -7,47 +7,41 @@ namespace SpellingActivity
 {
     public class DifficultySelector : MonoBehaviour
     {
-
-        public Modes obj;
-        private Modes[] modes;
-
-
-        private void Start()
-        {
-            //modes =obj.GetComponents<Modes>();
-        }
+        // 1-easy , 2-medium , 3-hard
+        public SpellingManager spellingManager;
+        public BalloonGenerator balloonGenerator;
 
         public void PressEasy()
         {
-            DeactivateAllModes(obj.GetComponent<EasyMode>());
+            if (spellingManager.IsActive) QuitModes();
+            spellingManager.SelectMode(1);
         }
 
         public void PressMedium()
         {
-            DeactivateAllModes(obj.GetComponent<MediumMode>());
+            if (spellingManager.IsActive) QuitModes();
+            spellingManager.SelectMode(2);
         }
 
         public void PressHard()
         {
-            DeactivateAllModes(obj.GetComponent<HardMode>());
+            if (spellingManager.IsActive) QuitModes();
+            spellingManager.SelectMode(3);
         }
 
-        public void PressCuston()
+        public void QuitModes()
         {
-            DeactivateAllModes(obj.GetComponent<CustomMode>());
+            spellingManager.enabled = false;
+            balloonGenerator.enabled = false;
+           
         }
 
-        private void DeactivateAllModes(Modes mode)
+        public void StartMode()
         {
-            foreach(Modes m in modes)
-            {
-                m.enabled = false;
-            }
-            mode.enabled = true;
-            //modes.First(m => m == mode).enabled=true;     //will check
+            spellingManager.enabled = true;
+            balloonGenerator.enabled = true;
+            spellingManager.StartActivity();
         }
-
-
     }
    
 }

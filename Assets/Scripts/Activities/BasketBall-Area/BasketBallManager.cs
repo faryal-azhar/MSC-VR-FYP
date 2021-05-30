@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Core;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -7,21 +8,30 @@ using UnityEngine;
 namespace BasketBallActivity
 {
     [RequireComponent(typeof(BasketBallScores))]
-    public class BasketBallManager : MonoBehaviour
+    public class BasketBallManager : MonoBehaviour,IAction
     {
-
+        [SerializeField] ActivityScheduler activityScheduler;
+        [Header("Activity Customization")]
         public GoalBasket[] targetBaskets;
         public ActivityType activityType;
+
         int number1, number2;   //to store random two operands
         int index1, index2, index3; //store indexes in random order
         int incorrectResult1, incorrectResult2, correctResult;
+        [Header("UI Components")]
         public TextMeshProUGUI questionText;
         BasketBallScores basketBallScores;
         int minNumber=1, maxNumber=11;
 
+        [Header("Background Music")]
+        [SerializeField] AudioClip audioClip;
+
+
         public void StartActivity()
         {
+            activityScheduler.StartAction(this,audioClip);
             basketBallScores = GetComponent<BasketBallScores>();
+            basketBallScores.SetBasketBallManager(this);
             //if(minNumber==0 || maxNumber==0) SetMinMaxRange(1, 11);
             GenerateQuestion();
             GenerateRandomResult();
@@ -43,7 +53,6 @@ namespace BasketBallActivity
             AssignValuesToGoalBasket(false);
             index1 = index2 = index3 = 0;
             basketBallScores.ResetScores();
-
         }
 
         private void GenerateQuestion()
@@ -117,13 +126,14 @@ namespace BasketBallActivity
 
         }
 
-        public enum ActivityType
-        {
-            addition,
-            subtraction,
-            multiplication,
-            division
-        }
+        
+    }
+    public enum ActivityType
+    {
+        addition,
+        subtraction,
+        multiplication,
+        division
     }
 
 }

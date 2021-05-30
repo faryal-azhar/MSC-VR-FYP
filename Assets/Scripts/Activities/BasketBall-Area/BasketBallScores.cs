@@ -15,7 +15,14 @@ namespace BasketBallActivity
         [SerializeField] TextMeshProUGUI scoreText;
         [SerializeField] TextMeshProUGUI chancesText;
         [SerializeField] TextMeshProUGUI highScoreText;
+        BasketBallManager basketBall;
+        [SerializeField] HighScoreManager highScoreManager;
 
+
+        public void SetBasketBallManager(BasketBallManager b)
+        {
+            basketBall = b;
+        }
 
         private void Start()
         {
@@ -69,10 +76,29 @@ namespace BasketBallActivity
             {
                 highScore = totalScore;
                 highScoreText.text = highScore.ToString();
+                UpdateHighScores();
             }   
         }
- 
-       
+
+        private void UpdateHighScores()
+        {
+            Debug.Log("CHEEEECK");
+            switch (basketBall.activityType)
+            {
+                case ActivityType.addition:
+                    highScoreManager.SetBasketballAdditionHighScores(highScore);
+                    break;
+                case ActivityType.subtraction:
+                    highScoreManager.SetBasketballSubtractionHighScores(highScore);
+                    break;
+                case ActivityType.multiplication:
+                    highScoreManager.SetBasketbalMultiplicationHighScores(highScore);
+                    break;
+                case ActivityType.division:
+                    highScoreManager.SetBasketbalDivisionHighScores(highScore);
+                    break;
+            }
+        }
     }
 
 }
