@@ -2,14 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class B_Color : MonoBehaviour
+namespace ColorActivity
 {
-   public enum Color
+    public class B_Color : MonoBehaviour
     {
-        Red,
-        Blue,
-        Green
+        public enum BlockColor
+        {
+            Green,
+            Red,
+            Blue,
+            Yellow,
+            Pink,
+            Orange,
+            Purple,
+            Brown,
+            Grey
+        }
+
+        public BlockColor blockColor;
     }
 
-    public Color color;
 }

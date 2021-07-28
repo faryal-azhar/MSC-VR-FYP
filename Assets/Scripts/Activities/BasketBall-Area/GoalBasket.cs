@@ -27,7 +27,7 @@ namespace BasketBallActivity
         {
             audioSource = GetComponent<AudioSource>();
         }
-        public void SetBallTriggeredBaketStand()
+        public void SetBallTriggeredBasketStand()
         {
             ballTriggeredBasketStand = true;
            // Debug.Log(ballTriggeredBasketStand);
@@ -49,6 +49,7 @@ namespace BasketBallActivity
                 else
                 {
                     score.DecreaseChances();
+                    Debug.Log("Wrong goal");
                     audioSource.PlayOneShot(incorrectAudio);
                 }
             }

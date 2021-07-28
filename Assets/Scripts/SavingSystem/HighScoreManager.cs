@@ -29,7 +29,6 @@ public class HighScoreManager:MonoBehaviour
                 highScores.Add(i, 0);
             }
         }
-        Debug.Log(highScores[2]);
     }
 
     public void SetSpellingHighScores(int hScore)
@@ -51,7 +50,6 @@ public class HighScoreManager:MonoBehaviour
             if(highScores[2] < hScore)
             {
                 highScores[2] = hScore;
-                Debug.Log("Called Addition");
                 savingSystem.SaveFile();
             }             
         }

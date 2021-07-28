@@ -32,7 +32,7 @@ namespace BasketBallActivity
         private void SetTriggers(Collider other)
         {
             other.GetComponent<Ball>().SetTriggerBasket(goalBasket);
-            goalBasket.SetBallTriggeredBaketStand();
+            goalBasket.SetBallTriggeredBasketStand();
         }
 
         private void PlayVfx()

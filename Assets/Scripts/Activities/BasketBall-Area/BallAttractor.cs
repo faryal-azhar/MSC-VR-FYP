@@ -15,6 +15,7 @@ namespace BasketBallActivity
         [SerializeField] float slerpForce=10f;
         [SerializeField] float rbForce = 1000f;
         [SerializeField] float distanceToStop = 0.3f;
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.GetComponent<Ball>())

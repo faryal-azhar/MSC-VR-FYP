@@ -2,29 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Buckets : MonoBehaviour
+namespace ColorActivity
 {
-    public Bucket[] buckets;
-    public AudioSource winningAudio;
-
-    public void DestroyBuckets()
+    public class Buckets : MonoBehaviour
     {
-        foreach(Bucket bucket in buckets)
+        public Bucket[] buckets;
+        public Door door;
+        public AudioSource winningAudio;
+        public GameObject infoBoard;
+        public ColorManager colorManager;
+
+        public void DestroyBuckets()
         {
-            bucket.DestroyBucket();
+            foreach (Bucket bucket in buckets)
+            {
+                bucket.DestroyBucket();
+            }
+            Destroy(infoBoard.gameObject);
+            door.UnlockDoor();
+            winningAudio.Play();
+            colorManager.Destroy();
+            Destroy(gameObject);
         }
-        winningAudio.Play();
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }

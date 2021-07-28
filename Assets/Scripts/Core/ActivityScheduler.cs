@@ -13,7 +13,6 @@ namespace Core
 
         public void StartAction(IAction action,AudioClip audioClip)
         {
-            if (currentAction == action) return;
             if (currentAction != null)
             {
                 Debug.Log($"Cancelling {currentAction}");
@@ -21,7 +20,11 @@ namespace Core
             }
             currentAction = action;
             musicPlayer.PlayMusic(audioClip);
+        }
 
+        public void ResetTheDefaultMusic()
+        {
+            musicPlayer.PlayDefaultMusic();
         }
     }
 

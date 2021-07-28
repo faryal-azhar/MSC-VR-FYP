@@ -53,6 +53,7 @@ namespace BasketBallActivity
             AssignValuesToGoalBasket(false);
             index1 = index2 = index3 = 0;
             basketBallScores.ResetScores();
+            activityScheduler.ResetTheDefaultMusic();
         }
 
         private void GenerateQuestion()

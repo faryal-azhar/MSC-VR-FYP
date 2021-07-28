@@ -15,13 +15,13 @@ namespace BasketBallActivity
         [SerializeField] TextMeshProUGUI scoreText;
         [SerializeField] TextMeshProUGUI chancesText;
         [SerializeField] TextMeshProUGUI highScoreText;
-        BasketBallManager basketBall;
+        BasketBallManager basketballManager;
         [SerializeField] HighScoreManager highScoreManager;
 
 
         public void SetBasketBallManager(BasketBallManager b)
         {
-            basketBall = b;
+            basketballManager = b;
         }
 
         private void Start()
@@ -83,7 +83,7 @@ namespace BasketBallActivity
         private void UpdateHighScores()
         {
             Debug.Log("CHEEEECK");
-            switch (basketBall.activityType)
+            switch (basketballManager.activityType)
             {
                 case ActivityType.addition:
                     highScoreManager.SetBasketballAdditionHighScores(highScore);

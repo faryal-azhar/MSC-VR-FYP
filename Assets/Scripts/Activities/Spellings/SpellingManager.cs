@@ -17,6 +17,7 @@ namespace SpellingActivity
         [SerializeField] SpellingUiManager uiManager;
         [SerializeField] ActivityScheduler activityScheduler;
         [SerializeField] HighScoreManager highScoreManager;
+
         [Header("Modes File Name")]
         [SerializeField] string easyModeFile = "easy.txt";
         [SerializeField] string mediumModeFile = "medium.txt";
@@ -100,6 +101,7 @@ namespace SpellingActivity
             uiManager.UpdateScore("");
             uiManager.EmptyResult();
             uiManager.EmptyScrabledWord();
+            activityScheduler.ResetTheDefaultMusic();
         }
 
         private void OnEnable()
@@ -125,7 +127,7 @@ namespace SpellingActivity
         private void BalloonGenerator_CheckTheWord(string guessedWord)
         {
             if (!enabled) return;
-            if (dictionaryWords.Contains(guessedWord.ToLower()))
+            if (BinarySearch(guessedWord.ToLower()))    // Do Binary Search
             {
                 GetComponent<Celebrator>().Celebration();
                 StartCoroutine("CorrectGuess") ;  
@@ -135,6 +137,22 @@ namespace SpellingActivity
                 StartCoroutine("IncorrectGuess");
             }
             
+        }
+
+        private bool BinarySearch(String guessedWord)  // Test
+        {
+            int low = 0, high = dictionaryWords.Length - 1, mid;
+            while (low <= high)
+            {
+                mid = (low + high) / 2;
+                if (dictionaryWords[mid].CompareTo(guessedWord)==0)     // == 0 --> Both are Equal
+                    return true;
+                if (dictionaryWords[mid].CompareTo(guessedWord) < 0)    // < 0 --> instance is bigger
+                    low = mid + 1;
+                if (dictionaryWords[mid].CompareTo(guessedWord) > 0)    // > 0 --> instance is smaller
+                    high = mid - 1;
+            }
+            return false;
         }
 
         IEnumerator CorrectGuess()
@@ -171,7 +189,7 @@ namespace SpellingActivity
             GenerateBalloon(scrambledWord);
         }
 
-        public virtual void GenerateTheWord()
+        public void GenerateTheWord()
         {
             Debug.Log(name + "  : " + words.Count);
             currentWord = words[UnityEngine.Random.Range(0, words.Count)];
@@ -204,8 +222,7 @@ namespace SpellingActivity
                 characters.Remove(randomCharacter);
             }
 
-            if (scrambledWord == currentWord) ScrambleTheWord();
-            
+            if (scrambledWord == currentWord) ScrambleTheWord();      
         }
     }
 }

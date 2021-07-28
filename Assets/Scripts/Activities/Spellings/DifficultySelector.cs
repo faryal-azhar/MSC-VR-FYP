@@ -31,9 +31,9 @@ namespace SpellingActivity
 
         public void QuitModes()
         {
+            spellingManager.QuitActivity();
             spellingManager.enabled = false;
-            balloonGenerator.enabled = false;
-           
+            balloonGenerator.enabled = false;          
         }
 
         public void StartMode()

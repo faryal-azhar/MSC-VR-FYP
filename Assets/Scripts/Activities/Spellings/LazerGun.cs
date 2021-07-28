@@ -11,11 +11,13 @@ namespace SpellingActivity
         public void EmitLaser()
         {
             laser.SetActive(true);
+            GetComponent<AudioSource>().Play();
         }
         
         public void StopLaserEmission()
         {
             laser.SetActive(false);
+            GetComponent<AudioSource>().Stop();
         }
     }
 }
