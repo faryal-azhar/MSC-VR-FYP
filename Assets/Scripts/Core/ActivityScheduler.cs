@@ -1,32 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using SpellingActivity;
-using BasketBallActivity;
+﻿using UnityEngine;
 
-namespace Core
+namespace KidsVR.Core
 {
+    // Makes sure only one activity is running at a time and plays its music.
     public class ActivityScheduler : MonoBehaviour
     {
-        IAction currentAction;
-        [SerializeField] MusicPlayer musicPlayer;
+        [SerializeField] private MusicPlayer musicPlayer;
 
-        public void StartAction(IAction action,AudioClip audioClip)
+        private IActivity currentActivity;
+
+        public void Begin(IActivity activity, AudioClip music)
         {
-            if (currentAction != null)
+            if (currentActivity == activity) return;
+
+            if (currentActivity != null)
             {
-                Debug.Log($"Cancelling {currentAction}");
-                currentAction.QuitActivity();
+                currentActivity.StopActivity();
             }
-            currentAction = action;
-            musicPlayer.PlayMusic(audioClip);
+
+            currentActivity = activity;
+            musicPlayer.Play(music);
         }
 
-        public void ResetTheDefaultMusic()
+        public void End(IActivity activity)
         {
-            musicPlayer.PlayDefaultMusic();
+            if (currentActivity != activity) return;
+
+            currentActivity = null;
+            musicPlayer.PlayDefault();
         }
     }
-
-    
 }

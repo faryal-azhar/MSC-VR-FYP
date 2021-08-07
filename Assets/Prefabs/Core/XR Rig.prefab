@@ -1343,7 +1343,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7320284451932064520}
-        m_TargetAssemblyTypeName: LocomotionController, Assembly-CSharp
+        m_TargetAssemblyTypeName: KidsVR.Player.LocomotionController, KidsVR
         m_MethodName: set_EnableTeleport
         m_Mode: 6
         m_Arguments:
@@ -1358,7 +1358,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7320284451932064520}
-        m_TargetAssemblyTypeName: LocomotionController, Assembly-CSharp
+        m_TargetAssemblyTypeName: KidsVR.Player.LocomotionController, KidsVR
         m_MethodName: set_EnableTeleport
         m_Mode: 6
         m_Arguments:

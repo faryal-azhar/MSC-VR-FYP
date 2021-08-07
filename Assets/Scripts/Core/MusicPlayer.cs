@@ -1,32 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Core
+namespace KidsVR.Core
 {
+    [RequireComponent(typeof(AudioSource))]
     public class MusicPlayer : MonoBehaviour
     {
-        AudioSource audioSource;
-        [SerializeField] AudioClip defaultBackgroundMusic;
-        
-        // Start is called before the first frame update
-        void Start()
+        [SerializeField] private AudioClip defaultBackgroundMusic;
+
+        private AudioSource audioSource;
+
+        private void Awake()
         {
             audioSource = GetComponent<AudioSource>();
-            PlayDefaultMusic();
         }
 
-        public void PlayMusic(AudioClip audioClip)
+        private void Start()
         {
-            audioSource.clip = audioClip;
-            audioSource.Play();
+            PlayDefault();
         }
 
-        public void PlayDefaultMusic()
+        public void Play(AudioClip clip)
         {
             audioSource.Stop();
-            audioSource.clip = defaultBackgroundMusic;
+            audioSource.clip = clip;
             audioSource.Play();
+        }
+
+        public void PlayDefault()
+        {
+            Play(defaultBackgroundMusic);
         }
     }
 }
