@@ -141,4 +141,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 4084265891891975399, guid: fe0fba948c0522b49abdb736a8a85bad,
     type: 3}
-  transformPoint: {fileID: 2532557136029400458}
+  spawnPoint: {fileID: 2532557136029400458}

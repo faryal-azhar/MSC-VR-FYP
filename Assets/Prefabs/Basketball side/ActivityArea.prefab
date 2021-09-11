@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead62ce8068086e438642e2e5b11a547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basketBallManager: {fileID: 8909323702012305865}
+  activity: {fileID: 8909323702012305865}
 --- !u!1 &173051640
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,11 +876,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633cab2d7c8cebe4d87e10872ff0e296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: {fileID: 1703108376}
-  move: 0
-  slerpForce: 6
-  rbForce: 2
-  distanceToStop: 0.3
+  target: {fileID: 1703108376}
+  pullStrength: 6
+  pushForce: 2
+  stopDistance: 0.3
 --- !u!1 &1157688112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,8 +1559,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 157270268}
-        m_TargetAssemblyTypeName: BasketBallActivity.PlayingModes, Assembly-CSharp
-        m_MethodName: HardMode
+        m_TargetAssemblyTypeName: KidsVR.Activities.Basketball.BasketballDifficulty, KidsVR
+        m_MethodName: SelectHard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1692,8 +1691,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 157270268}
-        m_TargetAssemblyTypeName: BasketBallActivity.PlayingModes, Assembly-CSharp
-        m_MethodName: EasyMode
+        m_TargetAssemblyTypeName: KidsVR.Activities.Basketball.BasketballDifficulty, KidsVR
+        m_MethodName: SelectEasy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2645,8 +2644,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 157270268}
-        m_TargetAssemblyTypeName: BasketBallActivity.PlayingModes, Assembly-CSharp
-        m_MethodName: IntermediateMode
+        m_TargetAssemblyTypeName: KidsVR.Activities.Basketball.BasketballDifficulty, KidsVR
+        m_MethodName: SelectMedium
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3130,11 +3129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633cab2d7c8cebe4d87e10872ff0e296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: {fileID: 5540382529486477395}
-  move: 0
-  slerpForce: 6
-  rbForce: 2
-  distanceToStop: 0.3
+  target: {fileID: 5540382529486477395}
+  pullStrength: 6
+  pushForce: 2
+  stopDistance: 0.3
 --- !u!82 &2005112991
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3955,11 +3953,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633cab2d7c8cebe4d87e10872ff0e296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: {fileID: 5573485084092102449}
-  move: 0
-  slerpForce: 6
-  rbForce: 2
-  distanceToStop: 0.3
+  target: {fileID: 5573485084092102449}
+  pullStrength: 6
+  pushForce: 2
+  stopDistance: 0.3
 --- !u!1 &5654770076593369536
 GameObject:
   m_ObjectHideFlags: 0
@@ -4199,7 +4196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 4084265891891975399, guid: fe0fba948c0522b49abdb736a8a85bad,
     type: 3}
-  transformPoint: {fileID: 1513608647}
+  spawnPoint: {fileID: 1513608647}
 --- !u!1 &7475474331283671145
 GameObject:
   m_ObjectHideFlags: 0
@@ -4340,13 +4337,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activityScheduler: {fileID: 0}
-  targetBaskets:
+  baskets:
   - {fileID: 8909323702072599207}
   - {fileID: 8909323703414069537}
   - {fileID: 8909323702426566014}
-  activityType: 0
+  operation: 0
   questionText: {fileID: 1275903858}
-  audioClip: {fileID: 8300000, guid: a5bafbe9a0d898b4590ad7afe22c35b4, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: a5bafbe9a0d898b4590ad7afe22c35b4, type: 3}
+  ballStand: {fileID: 3239074493824263347}
+  ballAttractors:
+  - {fileID: 1142396089}
+  - {fileID: 2835062155366415616}
+  - {fileID: 5060090977973114356}
 --- !u!114 &823590650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4359,10 +4361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 216e3a5e0165cb144b4e2dec47edffa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scorePerGoal: 5
-  totalScore: 0
-  chances: 5
-  highScore: 0
+  pointsPerGoal: 5
+  startingChances: 5
   scoreText: {fileID: 1600730672}
   chancesText: {fileID: 1188304317}
   highScoreText: {fileID: 1295003605}
@@ -4622,12 +4622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20932e90d19103a4ba5b88f2114df501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 8909323702012305865}
-  ballStand: {fileID: 3239074493824263347}
-  ballAttractors:
-  - {fileID: 1142396089}
-  - {fileID: 2835062155366415616}
-  - {fileID: 5060090977973114356}
+  activity: {fileID: 8909323702012305865}
 --- !u!1 &8909323703824694950
 GameObject:
   m_ObjectHideFlags: 0
@@ -4850,10 +4845,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 38861103}
     - target: {fileID: 413836731, guid: 06c66bb236ddc134e9b80bfcb09e0191, type: 3}
-      propertyPath: score
-      value: 
-      objectReference: {fileID: 823590650}
-    - target: {fileID: 413836731, guid: 06c66bb236ddc134e9b80bfcb09e0191, type: 3}
       propertyPath: correctAudio
       value: 
       objectReference: {fileID: 8300000, guid: cb16b2c9530e6434aa9d237202cbae2a, type: 3}
@@ -4869,10 +4860,6 @@ PrefabInstance:
       propertyPath: fireworkVfxPoint
       value: 
       objectReference: {fileID: 2071076407}
-    - target: {fileID: 413836731, guid: 06c66bb236ddc134e9b80bfcb09e0191, type: 3}
-      propertyPath: modes
-      value: 
-      objectReference: {fileID: 157270268}
     - target: {fileID: 2132696760613173016, guid: 06c66bb236ddc134e9b80bfcb09e0191,
         type: 3}
       propertyPath: m_Layer
@@ -5168,10 +5155,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1805706723}
     - target: {fileID: 413836731, guid: 06c66bb236ddc134e9b80bfcb09e0191, type: 3}
-      propertyPath: score
-      value: 
-      objectReference: {fileID: 823590650}
-    - target: {fileID: 413836731, guid: 06c66bb236ddc134e9b80bfcb09e0191, type: 3}
       propertyPath: correctAudio
       value: 
       objectReference: {fileID: 8300000, guid: cb16b2c9530e6434aa9d237202cbae2a, type: 3}
@@ -5187,10 +5170,6 @@ PrefabInstance:
       propertyPath: fireworkVfxPoint
       value: 
       objectReference: {fileID: 2093201807}
-    - target: {fileID: 413836731, guid: 06c66bb236ddc134e9b80bfcb09e0191, type: 3}
-      propertyPath: modes
-      value: 
-      objectReference: {fileID: 157270268}
     - target: {fileID: 2132696760613173016, guid: 06c66bb236ddc134e9b80bfcb09e0191,
         type: 3}
       propertyPath: m_Layer
@@ -5521,10 +5500,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1641341805}
     - target: {fileID: 413836731, guid: 06c66bb236ddc134e9b80bfcb09e0191, type: 3}
-      propertyPath: score
-      value: 
-      objectReference: {fileID: 823590650}
-    - target: {fileID: 413836731, guid: 06c66bb236ddc134e9b80bfcb09e0191, type: 3}
       propertyPath: correctAudio
       value: 
       objectReference: {fileID: 8300000, guid: cb16b2c9530e6434aa9d237202cbae2a, type: 3}
@@ -5540,10 +5515,6 @@ PrefabInstance:
       propertyPath: fireworkVfxPoint
       value: 
       objectReference: {fileID: 1961781544}
-    - target: {fileID: 413836731, guid: 06c66bb236ddc134e9b80bfcb09e0191, type: 3}
-      propertyPath: modes
-      value: 
-      objectReference: {fileID: 157270268}
     - target: {fileID: 604987258364841086, guid: 06c66bb236ddc134e9b80bfcb09e0191,
         type: 3}
       propertyPath: m_RootOrder

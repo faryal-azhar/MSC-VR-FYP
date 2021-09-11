@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d124caf3245bb9340b7fede572479806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTriggerBasket: 0
 --- !u!114 &7772195835090187416
 MonoBehaviour:
   m_ObjectHideFlags: 0

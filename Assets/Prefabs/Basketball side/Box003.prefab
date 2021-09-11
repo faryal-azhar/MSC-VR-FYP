@@ -756,8 +756,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d55f36c2131e7f54da707d5df241a326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: 0
-  ballTriggeredBasketStand: 0
 --- !u!1 &5439489942328449519
 GameObject:
   m_ObjectHideFlags: 0
