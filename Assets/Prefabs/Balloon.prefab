@@ -345,10 +345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88085b43326e6345b62bec096f38060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterText: {fileID: 1244562054935599607}
-  containedCharacter: 0
+  letterText: {fileID: 1244562054935599607}
   popVfx: {fileID: 19800000, guid: a6dd1b9366fffdb46b787f47735c17f0, type: 3}
-  balloonGenerator: {fileID: 0}
 --- !u!54 &614591011926782461
 Rigidbody:
   m_ObjectHideFlags: 0
