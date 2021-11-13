@@ -1750,7 +1750,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1808714715}
-        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: KidsVR.Menu.MainMenu, KidsVR
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
@@ -2401,8 +2401,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1808714715}
-        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: ActivateHomeCanvas
+        m_TargetAssemblyTypeName: KidsVR.Menu.MainMenu, KidsVR
+        m_MethodName: ShowHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2667,8 +2667,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1808714715}
-        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: ActivateHomeCanvas
+        m_TargetAssemblyTypeName: KidsVR.Menu.MainMenu, KidsVR
+        m_MethodName: ShowHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2798,8 +2798,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1808714715}
-        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: ActivateAboutCanvas
+        m_TargetAssemblyTypeName: KidsVR.Menu.MainMenu, KidsVR
+        m_MethodName: ShowAbout
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2929,8 +2929,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1684852915}
-        m_TargetAssemblyTypeName: PopInfo, Assembly-CSharp
-        m_MethodName: ShowGmailContact
+        m_TargetAssemblyTypeName: KidsVR.Menu.ContactPopup, KidsVR
+        m_MethodName: ShowEmailContact
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3257,7 +3257,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1592309054}
-  - component: {fileID: 1592309056}
   - component: {fileID: 1592309055}
   m_Layer: 0
   m_Name: HighScoreUpdater
@@ -3292,23 +3291,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190b85023ef53ba4c8d9f4d9194961ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spelling: {fileID: 1876740776}
-  addition: {fileID: 1534110652}
-  subtraction: {fileID: 709709053}
-  multiplication: {fileID: 667321010}
-  division: {fileID: 288887715}
---- !u!114 &1592309056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592309053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a50e8b94f5d0c0840877d60d7368d950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  spellingText: {fileID: 1876740776}
+  additionText: {fileID: 1534110652}
+  subtractionText: {fileID: 709709053}
+  multiplicationText: {fileID: 667321010}
+  divisionText: {fileID: 288887715}
 --- !u!1 &1611250034
 GameObject:
   m_ObjectHideFlags: 0
@@ -3628,8 +3615,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpText: {fileID: 245827316}
-  fbId: fb.com/faryalazhar19
-  gmailId: faryalazhar00@gmail.com
+  facebookContact: fb.com/faryalazhar19
+  emailContact: faryalazhar00@gmail.com
 --- !u!1001 &1735671064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4596,8 +4583,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1684852915}
-        m_TargetAssemblyTypeName: PopInfo, Assembly-CSharp
-        m_MethodName: ShowFbContact
+        m_TargetAssemblyTypeName: KidsVR.Menu.ContactPopup, KidsVR
+        m_MethodName: ShowFacebookContact
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4852,8 +4839,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1808714715}
-        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: ActivateHighScoreCanvas
+        m_TargetAssemblyTypeName: KidsVR.Menu.MainMenu, KidsVR
+        m_MethodName: ShowHighScores
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
