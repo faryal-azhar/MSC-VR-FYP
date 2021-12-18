@@ -2755,14 +2755,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180660942}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d0b559c36558df4d9fb831e54a6044d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   balloonPrefab: {fileID: -5573313547981853710, guid: 87d5be805d88d5b44b1d9d7e33762a88,
     type: 3}
-  uiManager: {fileID: 1021515680}
+  ui: {fileID: 1021515680}
 --- !u!82 &180660945
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3400,7 +3400,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BasketBallActivity.PlayingModes, Assembly-CSharp
+        m_TargetAssemblyTypeName: KidsVR.Activities.Basketball.BasketballDifficulty, KidsVR
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -4867,12 +4867,12 @@ PrefabInstance:
       objectReference: {fileID: 1003910386}
     - target: {fileID: 8909323702012305865, guid: 7d31e4b6c84addb4cb80e4cdea0413c9,
         type: 3}
-      propertyPath: audioClip
+      propertyPath: backgroundMusic
       value: 
       objectReference: {fileID: 8300000, guid: a5bafbe9a0d898b4590ad7afe22c35b4, type: 3}
     - target: {fileID: 8909323702012305865, guid: 7d31e4b6c84addb4cb80e4cdea0413c9,
         type: 3}
-      propertyPath: activityType
+      propertyPath: operation
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8909323703824694950, guid: 7d31e4b6c84addb4cb80e4cdea0413c9,
@@ -7435,7 +7435,6 @@ GameObject:
   - component: {fileID: 357879225}
   - component: {fileID: 357879224}
   - component: {fileID: 357879227}
-  - component: {fileID: 357879228}
   m_Layer: 10
   m_Name: block_clr_3
   m_TagString: Untagged
@@ -7625,19 +7624,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorSpeaker: {fileID: 1170039807}
---- !u!114 &357879228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 357879220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4944020b41bd4f965791297aa678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockColor: 0
 --- !u!1 &360957654
 GameObject:
   m_ObjectHideFlags: 0
@@ -8063,7 +8049,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BasketBallActivity.PlayingModes, Assembly-CSharp
+        m_TargetAssemblyTypeName: KidsVR.Activities.Basketball.BasketballDifficulty, KidsVR
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -9200,18 +9186,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ColorActivity.ColorManager, Assembly-CSharp
-        m_MethodName: SetColor
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: ColorActivity.B_Color, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &477822356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9260,7 +9234,6 @@ GameObject:
   m_Component:
   - component: {fileID: 478255707}
   - component: {fileID: 478255709}
-  - component: {fileID: 478255708}
   m_Layer: 0
   m_Name: SavingSystem
   m_TagString: Untagged
@@ -9282,18 +9255,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &478255708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 478255706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a50e8b94f5d0c0840877d60d7368d950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &478255709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9997,7 +9958,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BasketBallActivity.PlayingModes, Assembly-CSharp
+        m_TargetAssemblyTypeName: KidsVR.Activities.Basketball.BasketballDifficulty, KidsVR
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -11108,7 +11069,6 @@ GameObject:
   - component: {fileID: 679395958}
   - component: {fileID: 679395957}
   - component: {fileID: 679395960}
-  - component: {fileID: 679395961}
   m_Layer: 10
   m_Name: block_clr_3
   m_TagString: Untagged
@@ -11298,19 +11258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorSpeaker: {fileID: 1170039807}
---- !u!114 &679395961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679395953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4944020b41bd4f965791297aa678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockColor: 0
 --- !u!4 &682278997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013568642582, guid: c5546983c1edc4843b0dd3741e242d55,
@@ -12462,7 +12409,7 @@ PrefabInstance:
       objectReference: {fileID: 1003910386}
     - target: {fileID: 8909323702012305865, guid: 7d31e4b6c84addb4cb80e4cdea0413c9,
         type: 3}
-      propertyPath: audioClip
+      propertyPath: backgroundMusic
       value: 
       objectReference: {fileID: 8300000, guid: a5bafbe9a0d898b4590ad7afe22c35b4, type: 3}
     - target: {fileID: 8909323703824694950, guid: 7d31e4b6c84addb4cb80e4cdea0413c9,
@@ -14147,7 +14094,6 @@ GameObject:
   - component: {fileID: 915725265}
   - component: {fileID: 915725264}
   - component: {fileID: 915725267}
-  - component: {fileID: 915725268}
   m_Layer: 10
   m_Name: block_clr_2
   m_TagString: Untagged
@@ -14337,19 +14283,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorSpeaker: {fileID: 1170039807}
---- !u!114 &915725268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 915725260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4944020b41bd4f965791297aa678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockColor: 0
 --- !u!1 &919561720
 GameObject:
   m_ObjectHideFlags: 0
@@ -14402,7 +14335,6 @@ GameObject:
   - component: {fileID: 921934241}
   - component: {fileID: 921934242}
   - component: {fileID: 921934243}
-  - component: {fileID: 921934244}
   m_Layer: 0
   m_Name: Basket_2
   m_TagString: Untagged
@@ -14498,9 +14430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ecd273ff2eb4e34b967c878c5f2cb9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBlocks: 3
-  collidingBlocks: []
-  VFX: {fileID: 5775792050484356042, guid: 22c63dce60609494f81ef2ae21b62d60, type: 3}
+  blocksToFill: 3
+  completeVfx: {fileID: 5775792050484356042, guid: 22c63dce60609494f81ef2ae21b62d60, type: 3}
 --- !u!64 &921934243
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14515,19 +14446,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: c83939eafca792d4f9d29d09704b859a, type: 3}
---- !u!114 &921934244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921934237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4944020b41bd4f965791297aa678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockColor: 0
 --- !u!1001 &922801505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15630,8 +15548,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4076523183991924159}
-        m_TargetAssemblyTypeName: SpellingActivity.DifficultySelector, Assembly-CSharp
-        m_MethodName: StartMode
+        m_TargetAssemblyTypeName: KidsVR.Activities.Spelling.SpellingMenu, KidsVR
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16395,10 +16313,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa143fe4d30c28444bdaa51914d1096e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrambledWord: {fileID: 943564780}
-  unScrambledWord: {fileID: 640838156}
+  scrambledWordText: {fileID: 943564780}
+  guessText: {fileID: 640838156}
   scoreText: {fileID: 7002561}
-  result: {fileID: 1399749743}
+  resultText: {fileID: 1399749743}
 --- !u!1001 &1023904648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17663,7 +17581,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BasketBallActivity.PlayingModes, Assembly-CSharp
+        m_TargetAssemblyTypeName: KidsVR.Activities.Basketball.BasketballDifficulty, KidsVR
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -18248,7 +18166,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BasketBallActivity.PlayingModes, Assembly-CSharp
+        m_TargetAssemblyTypeName: KidsVR.Activities.Basketball.BasketballDifficulty, KidsVR
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -18786,7 +18704,6 @@ GameObject:
   - component: {fileID: 1160734223}
   - component: {fileID: 1160734222}
   - component: {fileID: 1160734225}
-  - component: {fileID: 1160734226}
   m_Layer: 10
   m_Name: block_clr_2
   m_TagString: Untagged
@@ -18976,19 +18893,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorSpeaker: {fileID: 1170039807}
---- !u!114 &1160734226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160734218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4944020b41bd4f965791297aa678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockColor: 0
 --- !u!1001 &1164036583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19344,15 +19248,15 @@ MonoBehaviour:
   - {fileID: 921934242}
   - {fileID: 1873448914}
   colorBoard: {fileID: 3343023960391206437}
-  blocksColr1:
+  firstColorBlocks:
   - {fileID: 6282662757669162960}
   - {fileID: 6282662757675324102}
   - {fileID: 6282662757211544870}
-  blocksColr2:
+  secondColorBlocks:
   - {fileID: 915725267}
   - {fileID: 1160734225}
   - {fileID: 1210680970}
-  blocksColr3:
+  thirdColorBlocks:
   - {fileID: 1280962310}
   - {fileID: 679395960}
   - {fileID: 357879227}
@@ -19478,15 +19382,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db037c65ef9279347838d051948ca87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  green: {fileID: 8300000, guid: 390ff0f46cfbc9846bd47a5c9d8f4269, type: 3}
-  blue: {fileID: 8300000, guid: 431394dfbd71e8e42a2fb2600ca7dd76, type: 3}
-  yellow: {fileID: 8300000, guid: 039a57985b62d1e4db2aa5ef8cb421e9, type: 3}
-  pink: {fileID: 8300000, guid: 60c3e4b245d64d34488c22e39deba804, type: 3}
-  purple: {fileID: 8300000, guid: a27c36add2dd5e241b5a493dde73314a, type: 3}
-  red: {fileID: 8300000, guid: aed657c3731986e4c99e445cb38fb488, type: 3}
-  grey: {fileID: 8300000, guid: eeb844268036ba242a62735c1d0928fe, type: 3}
-  orange: {fileID: 8300000, guid: 9b25da802d72f75478bfa674e544fe8e, type: 3}
-  brown: {fileID: 8300000, guid: e1c6d24615fa9d5449f72124fce405fc, type: 3}
+  colorClips:
+  - color: 0
+    clip: {fileID: 8300000, guid: 390ff0f46cfbc9846bd47a5c9d8f4269, type: 3}
+  - color: 1
+    clip: {fileID: 8300000, guid: aed657c3731986e4c99e445cb38fb488, type: 3}
+  - color: 2
+    clip: {fileID: 8300000, guid: 431394dfbd71e8e42a2fb2600ca7dd76, type: 3}
+  - color: 3
+    clip: {fileID: 8300000, guid: 039a57985b62d1e4db2aa5ef8cb421e9, type: 3}
+  - color: 4
+    clip: {fileID: 8300000, guid: 60c3e4b245d64d34488c22e39deba804, type: 3}
+  - color: 5
+    clip: {fileID: 8300000, guid: 9b25da802d72f75478bfa674e544fe8e, type: 3}
+  - color: 6
+    clip: {fileID: 8300000, guid: a27c36add2dd5e241b5a493dde73314a, type: 3}
+  - color: 7
+    clip: {fileID: 8300000, guid: e1c6d24615fa9d5449f72124fce405fc, type: 3}
+  - color: 8
+    clip: {fileID: 8300000, guid: eeb844268036ba242a62735c1d0928fe, type: 3}
 --- !u!1001 &1175439938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20063,8 +19977,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4076523183991924159}
-        m_TargetAssemblyTypeName: SpellingActivity.DifficultySelector, Assembly-CSharp
-        m_MethodName: QuitModes
+        m_TargetAssemblyTypeName: KidsVR.Activities.Spelling.SpellingMenu, KidsVR
+        m_MethodName: StopGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20206,7 +20120,6 @@ GameObject:
   - component: {fileID: 1210680968}
   - component: {fileID: 1210680967}
   - component: {fileID: 1210680970}
-  - component: {fileID: 1210680971}
   m_Layer: 10
   m_Name: block_clr_2
   m_TagString: Untagged
@@ -20396,19 +20309,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorSpeaker: {fileID: 1170039807}
---- !u!114 &1210680971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210680963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4944020b41bd4f965791297aa678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockColor: 0
 --- !u!4 &1220862545 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 458122, guid: d8d4bdadcc380c747a786c9980b29f28,
@@ -20770,12 +20670,12 @@ PrefabInstance:
       objectReference: {fileID: 1003910386}
     - target: {fileID: 8909323702012305865, guid: 7d31e4b6c84addb4cb80e4cdea0413c9,
         type: 3}
-      propertyPath: audioClip
+      propertyPath: backgroundMusic
       value: 
       objectReference: {fileID: 8300000, guid: a5bafbe9a0d898b4590ad7afe22c35b4, type: 3}
     - target: {fileID: 8909323702012305865, guid: 7d31e4b6c84addb4cb80e4cdea0413c9,
         type: 3}
-      propertyPath: activityType
+      propertyPath: operation
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8909323703824694950, guid: 7d31e4b6c84addb4cb80e4cdea0413c9,
@@ -21204,18 +21104,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ColorActivity.ColorManager, Assembly-CSharp
-        m_MethodName: SetColor
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: ColorActivity.B_Color, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1270079623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21348,7 +21236,6 @@ GameObject:
   - component: {fileID: 1280962308}
   - component: {fileID: 1280962307}
   - component: {fileID: 1280962310}
-  - component: {fileID: 1280962311}
   m_Layer: 10
   m_Name: block_clr_3
   m_TagString: Untagged
@@ -21538,19 +21425,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorSpeaker: {fileID: 1170039807}
---- !u!114 &1280962311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1280962303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4944020b41bd4f965791297aa678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockColor: 0
 --- !u!20 &1282197108 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7320284452265165480, guid: a5afd97c3ddff7246a23e884a91d2411,
@@ -22713,8 +22587,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4076523183991924159}
-        m_TargetAssemblyTypeName: SpellingActivity.DifficultySelector, Assembly-CSharp
-        m_MethodName: PressHard
+        m_TargetAssemblyTypeName: KidsVR.Activities.Spelling.SpellingMenu, KidsVR
+        m_MethodName: SelectHard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24134,8 +24008,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1738997720}
-        m_TargetAssemblyTypeName: SpellingActivity.GunStand, Assembly-CSharp
-        m_MethodName: GenerateGun
+        m_TargetAssemblyTypeName: KidsVR.Activities.Spelling.GunStand, KidsVR
+        m_MethodName: SpawnGun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24365,7 +24239,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BasketBallActivity.PlayingModes, Assembly-CSharp
+        m_TargetAssemblyTypeName: KidsVR.Activities.Basketball.BasketballDifficulty, KidsVR
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -25458,8 +25332,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4076523183991924159}
-        m_TargetAssemblyTypeName: SpellingActivity.DifficultySelector, Assembly-CSharp
-        m_MethodName: PressEasy
+        m_TargetAssemblyTypeName: KidsVR.Activities.Spelling.SpellingMenu, KidsVR
+        m_MethodName: SelectEasy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26915,7 +26789,7 @@ MonoBehaviour:
   door: {fileID: 152462011}
   winningAudio: {fileID: 1650330233}
   infoBoard: {fileID: 3343023960391206437}
-  colorManager: {fileID: 1170039804}
+  colorPicker: {fileID: 1170039804}
 --- !u!82 &1650330233
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27401,7 +27275,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BasketBallActivity.PlayingModes, Assembly-CSharp
+        m_TargetAssemblyTypeName: KidsVR.Activities.Basketball.BasketballDifficulty, KidsVR
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -27784,23 +27658,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664967005}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8af88009ff8f7894d9ccea9b9f55aba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManager: {fileID: 1021515680}
+  ui: {fileID: 1021515680}
   activityScheduler: {fileID: 1003910386}
   highScoreManager: {fileID: 478255709}
-  easyModeFile: easy.txt
-  mediumModeFile: medium.txt
-  hardModeFile: hard.txt
-  easyScore: 5
-  mediumScore: 10
-  hardScore: 15
-  background: {fileID: 8300000, guid: 475f4837af487ce4a9e68bb227455e4c, type: 3}
-  correctWord: {fileID: 8300000, guid: 04bafcffa71fa114eb5cda7f7b9399ed, type: 3}
-  wrongWord: {fileID: 8300000, guid: fd52286d54735b74d9b57dd29d87eb1c, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: 475f4837af487ce4a9e68bb227455e4c, type: 3}
+  correctSound: {fileID: 8300000, guid: 04bafcffa71fa114eb5cda7f7b9399ed, type: 3}
+  wrongSound: {fileID: 8300000, guid: fd52286d54735b74d9b57dd29d87eb1c, type: 3}
+  balloonSpawner: {fileID: 180660944}
+  dictionaryFile: {fileID: 4900000, guid: 1595b626b44d9f048a8e67180f494252, type: 3}
+  easy:
+    wordList: {fileID: 4900000, guid: 2c3c6bebd9550ae42bdccc944382fc80, type: 3}
+    pointsPerWord: 5
+  medium:
+    wordList: {fileID: 4900000, guid: 051ac23187d4ea547b24451df379ffc5, type: 3}
+    pointsPerWord: 10
+  hard:
+    wordList: {fileID: 4900000, guid: b10bc758a887a2147804983e20640608, type: 3}
+    pointsPerWord: 15
 --- !u!82 &1664967011
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27912,7 +27791,7 @@ MonoBehaviour:
   foxAnimator: {fileID: 1812594898}
   catAnimator: {fileID: 77927615}
   leftFirework: {fileID: 2145462409}
-  rightFriework: {fileID: 1028131171}
+  rightFirework: {fileID: 1028131171}
 --- !u!1001 &1666708829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29074,11 +28953,11 @@ PrefabInstance:
       value: 0.039
       objectReference: {fileID: 0}
     - target: {fileID: 152462011, guid: 89dd74c61103b7644ab2dd9d26606ea0, type: 3}
-      propertyPath: doorLockedText
+      propertyPath: lockedMessage
       value: 
       objectReference: {fileID: 2080907798}
     - target: {fileID: 152462011, guid: 89dd74c61103b7644ab2dd9d26606ea0, type: 3}
-      propertyPath: handler
+      propertyPath: handle
       value: 
       objectReference: {fileID: 1089218551}
     - target: {fileID: 1737418727, guid: 89dd74c61103b7644ab2dd9d26606ea0, type: 3}
@@ -29279,7 +29158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunPrefab: {fileID: 1557125400, guid: 87b967b794130ad4aabc045be7609427, type: 3}
-  pointOfInstantiate: {fileID: 1827759852}
+  spawnPoint: {fileID: 1827759852}
 --- !u!1001 &1745194442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29802,8 +29681,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4076523183991924159}
-        m_TargetAssemblyTypeName: SpellingActivity.DifficultySelector, Assembly-CSharp
-        m_MethodName: PressMedium
+        m_TargetAssemblyTypeName: KidsVR.Activities.Spelling.SpellingMenu, KidsVR
+        m_MethodName: SelectMedium
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31296,7 +31175,6 @@ GameObject:
   - component: {fileID: 1873448913}
   - component: {fileID: 1873448914}
   - component: {fileID: 1873448915}
-  - component: {fileID: 1873448916}
   m_Layer: 0
   m_Name: Basket_3
   m_TagString: Untagged
@@ -31392,9 +31270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ecd273ff2eb4e34b967c878c5f2cb9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBlocks: 3
-  collidingBlocks: []
-  VFX: {fileID: 1134403961478250482, guid: eb644c9a850d60d42bdb37c1380b2b04, type: 3}
+  blocksToFill: 3
+  completeVfx: {fileID: 1134403961478250482, guid: eb644c9a850d60d42bdb37c1380b2b04, type: 3}
 --- !u!64 &1873448915
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31409,19 +31286,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: c83939eafca792d4f9d29d09704b859a, type: 3}
---- !u!114 &1873448916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873448909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4944020b41bd4f965791297aa678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockColor: 0
 --- !u!1001 &1873731215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33529,7 +33393,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BasketBallActivity.PlayingModes, Assembly-CSharp
+        m_TargetAssemblyTypeName: KidsVR.Activities.Basketball.BasketballDifficulty, KidsVR
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -37792,8 +37656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd662a4ed728f2f45a8eee48d6c73277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellingManager: {fileID: 1664967010}
-  balloonGenerator: {fileID: 180660944}
+  activity: {fileID: 1664967010}
 --- !u!65 &4076523183991924160
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45940,7 +45803,6 @@ GameObject:
   - component: {fileID: 6282662757211544868}
   - component: {fileID: 6282662757211544867}
   - component: {fileID: 6282662757211544870}
-  - component: {fileID: 6282662757211544871}
   m_Layer: 10
   m_Name: block_clr_1
   m_TagString: Untagged
@@ -46067,19 +45929,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorSpeaker: {fileID: 1170039807}
---- !u!114 &6282662757211544871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6282662757211544866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4944020b41bd4f965791297aa678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockColor: 0
 --- !u!4 &6282662757211570434
 Transform:
   m_ObjectHideFlags: 0
@@ -49591,7 +49440,6 @@ GameObject:
   - component: {fileID: 6282662757669162958}
   - component: {fileID: 6282662757669162957}
   - component: {fileID: 6282662757669162960}
-  - component: {fileID: 6282662757669162961}
   m_Layer: 10
   m_Name: block_clr_1
   m_TagString: Untagged
@@ -49718,19 +49566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorSpeaker: {fileID: 1170039807}
---- !u!114 &6282662757669162961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6282662757669162956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4944020b41bd4f965791297aa678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockColor: 0
 --- !u!4 &6282662757669393388
 Transform:
   m_ObjectHideFlags: 0
@@ -49760,7 +49595,6 @@ GameObject:
   - component: {fileID: 6282662757675324100}
   - component: {fileID: 6282662757675324099}
   - component: {fileID: 6282662757675324102}
-  - component: {fileID: 6282662757675324103}
   m_Layer: 10
   m_Name: block_clr_1
   m_TagString: Untagged
@@ -49887,19 +49721,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorSpeaker: {fileID: 1170039807}
---- !u!114 &6282662757675324103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6282662757675324098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4944020b41bd4f965791297aa678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockColor: 0
 --- !u!4 &6282662757675814626
 Transform:
   m_ObjectHideFlags: 0
@@ -59407,7 +59228,6 @@ GameObject:
   - component: {fileID: 6282662758736366178}
   - component: {fileID: 6282662758736366179}
   - component: {fileID: 6282662758736366177}
-  - component: {fileID: 6282662758736366180}
   m_Layer: 0
   m_Name: Basket_1
   m_TagString: Untagged
@@ -59440,9 +59260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ecd273ff2eb4e34b967c878c5f2cb9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBlocks: 3
-  collidingBlocks: []
-  VFX: {fileID: 4422144355941080568, guid: 89fddded523839c419280128bf5b16b3, type: 3}
+  blocksToFill: 3
+  completeVfx: {fileID: 4422144355941080568, guid: 89fddded523839c419280128bf5b16b3, type: 3}
 --- !u!64 &6282662758736366179
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59457,19 +59276,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: c83939eafca792d4f9d29d09704b859a, type: 3}
---- !u!114 &6282662758736366180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6282662758736366176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd4944020b41bd4f965791297aa678a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockColor: 0
 --- !u!23 &6282662758738302112
 MeshRenderer:
   m_ObjectHideFlags: 0
